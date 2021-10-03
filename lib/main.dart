@@ -25,7 +25,8 @@ class _AppState extends State<App> {
               if (snapshot.hasError) {
                 // Return widget SomethingWentWrong when the statesnapshot
                 // has an error.
-                return const Text('Error...'); //SomethingWentWrong();
+                return const Scaffold(
+                    body: Center(child: Text("Error"))); //SomethingWentWrong();
               }
               if (snapshot.connectionState == ConnectionState.done) {
                 // Return widget MyApp when no issues with ConnectionState
