@@ -1,4 +1,5 @@
 // ignore: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -20,12 +21,15 @@ class _AppState extends State<App> {
         future: _initialization,
         builder: (context, snapshot) {
           if (snapshot.hasError) {
+            // Return widget SomethingWentWrong when the statesnapshot
+            // has an error.
             return SomethingWentWrong();
           }
           if (snapshot.connectionState == ConnectionState.done) {
+            // Return widget MyApp when no issues with ConnectionState
             return MyApp();
           }
-
+          // Return widget Loading widget if waiting on snapshot
           return Loading();
         });
   }
