@@ -17,9 +17,8 @@ class _SignInState extends State<SignIn> {
         title: const Text('Sign In'),
       ),
       body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-        child: const Text('Sign In'),
-      ),
+          padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+          child: const Text('Sign In')),
     );
   }
 }
