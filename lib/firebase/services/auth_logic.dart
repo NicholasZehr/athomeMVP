@@ -1,10 +1,7 @@
-import 'package:athome/main.dart';
-import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthFire {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  //create current user object from auth
   //auth user stream to tell whether or not someone is logged in
 
   // sign in (Anonymously)
@@ -14,7 +11,7 @@ class AuthFire {
       User? user = result.user;
       return user;
     } catch (e) {
-      print(e.toString());
+      print(e);
       return 'Failed to sign in anonymously';
     }
   }
@@ -45,4 +42,13 @@ class AuthFire {
     }
   }
   // sign out
+
+  Future singOutUser() async {
+    try {
+      await _auth.signOut();
+    } catch (e) {
+      print(e.toString());
+      return 'Failed sign out Function';
+    }
+  }
 }
