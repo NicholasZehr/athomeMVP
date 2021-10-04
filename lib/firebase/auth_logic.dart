@@ -1,5 +1,3 @@
-import 'package:athome/main.dart';
-import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthFire {
@@ -45,4 +43,13 @@ class AuthFire {
     }
   }
   // sign out
+
+  Future singOutUser() async {
+    try {
+      await _auth.signOut();
+    } catch (e) {
+      print(e.toString());
+      return 'Failed sign out Function';
+    }
+  }
 }
