@@ -1,5 +1,4 @@
 import 'package:athome/screens/auth/authentication_screen.dart';
-import 'package:athome/screens/home/home_screens.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {

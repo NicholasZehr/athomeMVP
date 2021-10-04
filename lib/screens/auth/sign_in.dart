@@ -1,4 +1,4 @@
-import 'package:athome/firebase/auth_logic.dart';
+import 'package:athome/firebase/services/auth_logic.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
@@ -9,7 +9,7 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  final AuthFire _auth = AuthFire();
+  final AuthFire _authFire = AuthFire();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,8 +23,7 @@ class _SignInState extends State<SignIn> {
           child: ElevatedButton(
             child: const Text('Try Me!'),
             onPressed: () async {
-              dynamic userAnon = await _auth.signInAnon();
-              print(userAnon);
+              await _authFire.singOutUser();
             },
           ),
         ));
